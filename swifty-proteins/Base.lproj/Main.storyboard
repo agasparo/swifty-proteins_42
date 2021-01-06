@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginController" customModule="swifty_proteins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faf-dQ-hHz">
+                                <rect key="frame" x="152" y="500" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="TouchIdAuthenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Gt-Qd-puX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLO-Ye-4Yc">
+                                <rect key="frame" x="225" y="677" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="next"/>
+                                <connections>
+                                    <action selector="gonext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZkG-rH-Ymi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="-188"/>
+        </scene>
+        <!--Proteins View Controller-->
+        <scene sceneID="01D-5S-tj4">
+            <objects>
+                <viewController storyboardIdentifier="Model" id="p3D-Zf-be5" customClass="ProteinsViewController" customModule="swifty_proteins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gwd-fO-y79" customClass="SCNView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7d8-Wq-fsy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="JvO-4Y-ZTQ">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="1QB-7Z-LhU">
+                                            <connections>
+                                                <action selector="goBack:" destination="p3D-Zf-be5" id="xZx-WX-mXM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="whX-3h-mEu">
+                                            <connections>
+                                                <action selector="Share:" destination="p3D-Zf-be5" id="O70-IY-rdG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbl-Oj-gup">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="zoom +" image="plus.magnifyingglass" catalog="system" id="D6x-uW-zJc"/>
+                                    <tabBarItem title="zoom -" image="minus.magnifyingglass" catalog="system" id="yxJ-Dc-ocB"/>
+                                    <tabBarItem title="reset zoom" image="magnifyingglass" catalog="system" id="fXb-I7-G5U"/>
+                                    <tabBarItem title="autorotate" image="rotate.3d" catalog="system" id="jzl-aO-uHL"/>
+                                </items>
+                            </tabBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uHo-v2-MWF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7d8-Wq-fsy" secondAttribute="trailing" id="4MZ-I0-Agj"/>
+                            <constraint firstItem="7d8-Wq-fsy" firstAttribute="top" secondItem="gwd-fO-y79" secondAttribute="top" id="IKZ-UQ-SfR"/>
+                            <constraint firstItem="7d8-Wq-fsy" firstAttribute="leading" secondItem="gwd-fO-y79" secondAttribute="leading" id="fxA-VO-ZFG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabBar" destination="kbl-Oj-gup" id="sv7-RU-JAF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bCK-ks-e78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="499" y="3"/>
+        </scene>
+        <!--Proteins Tab-->
+        <scene sceneID="Qe2-Xy-Ruv">
+            <objects>
+                <tableViewController storyboardIdentifier="Choose" id="YyX-Bz-BCZ" customClass="ProteinsTab" customModule="swifty_proteins" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="J7f-Ka-gue">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProtCells" rowHeight="93" id="8VA-XN-p2x" customClass="ProteinsCustomCell" customModule="swifty_proteins" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="93"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8VA-XN-p2x" id="POr-PK-uK3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXS-jg-PlR">
+                                            <rect key="frame" x="46" y="36" width="43" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="state" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgs-h0-GE8">
+                                            <rect key="frame" x="356" y="36" width="38" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RXS-jg-PlR" firstAttribute="leading" secondItem="POr-PK-uK3" secondAttribute="leadingMargin" constant="26" id="7ln-7S-Lgy"/>
+                                        <constraint firstItem="Bgs-h0-GE8" firstAttribute="top" secondItem="POr-PK-uK3" secondAttribute="topMargin" constant="25" id="8Iz-Vr-ulX"/>
+                                        <constraint firstItem="Bgs-h0-GE8" firstAttribute="trailing" secondItem="POr-PK-uK3" secondAttribute="trailingMargin" id="9JG-B5-abX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Bgs-h0-GE8" secondAttribute="bottom" constant="25" id="att-4E-1Lf"/>
+                                        <constraint firstItem="Bgs-h0-GE8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RXS-jg-PlR" secondAttribute="trailing" constant="8" symbolic="YES" id="ekP-2h-gm3"/>
+                                        <constraint firstItem="RXS-jg-PlR" firstAttribute="top" secondItem="POr-PK-uK3" secondAttribute="topMargin" constant="25" id="iQj-7P-xE9"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="RXS-jg-PlR" secondAttribute="bottom" constant="25" id="yV1-C6-ajf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Name" destination="RXS-jg-PlR" id="LZT-UU-l2v"/>
+                                    <outlet property="State" destination="Bgs-h0-GE8" id="38I-WJ-dKj"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YyX-Bz-BCZ" id="6dX-29-7GF"/>
+                            <outlet property="delegate" destination="YyX-Bz-BCZ" id="wyK-KT-gZg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="esZ-cB-q92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268.1159420289855" y="476.78571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="rotate.3d" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
