@@ -31,8 +31,6 @@ class MendeleievController: NSObject, SCNSceneRendererDelegate {
         if infos != nil {
             
             setupInformations(data: infos, name: name, discover: discover, details: details)
-        } else {
-            // affihcer quon a pas assez dinfos
         }
         
         createSphere(x: "0", y: "0", z: "0", color: ProteinsModel().GetColor(atom: atom))
