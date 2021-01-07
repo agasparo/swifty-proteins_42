@@ -45,7 +45,7 @@
         <scene sceneID="01D-5S-tj4">
             <objects>
                 <viewController storyboardIdentifier="Model" id="p3D-Zf-be5" customClass="ProteinsViewController" customModule="swifty_proteins" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gwd-fO-y79" customClass="SCNView">
+                    <view key="view" contentMode="scaleToFill" id="gwd-fO-y79">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -55,21 +55,23 @@
                                     <navigationItem id="JvO-4Y-ZTQ">
                                         <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="1QB-7Z-LhU">
                                             <connections>
-                                                <action selector="goBack:" destination="p3D-Zf-be5" id="xZx-WX-mXM"/>
+                                                <action selector="goBack:" destination="p3D-Zf-be5" id="LVo-mD-PgG"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="whX-3h-mEu">
                                             <connections>
-                                                <action selector="Share:" destination="p3D-Zf-be5" id="O70-IY-rdG"/>
+                                                <action selector="Share:" destination="p3D-Zf-be5" id="Z11-Xq-AnU"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbl-Oj-gup">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbl-Oj-gup">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Xx0-FW-jjV"/>
+                                </constraints>
                                 <items>
                                     <tabBarItem title="zoom +" image="plus.magnifyingglass" catalog="system" id="D6x-uW-zJc"/>
                                     <tabBarItem title="zoom -" image="minus.magnifyingglass" catalog="system" id="yxJ-Dc-ocB"/>
@@ -77,22 +79,47 @@
                                     <tabBarItem title="autorotate" image="rotate.3d" catalog="system" id="jzl-aO-uHL"/>
                                 </items>
                             </tabBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urW-fs-DPz" customClass="SCNView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-hU-Jdq" customClass="SCNView">
+                                        <rect key="frame" x="209" y="0.0" width="205" height="241"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="BaB-hU-Jdq" firstAttribute="top" secondItem="urW-fs-DPz" secondAttribute="top" id="Qm7-Os-II2"/>
+                                    <constraint firstAttribute="trailing" secondItem="BaB-hU-Jdq" secondAttribute="trailing" id="Uez-ch-E39"/>
+                                    <constraint firstAttribute="bottom" secondItem="BaB-hU-Jdq" secondAttribute="bottom" constant="528" id="dRu-XE-yEq"/>
+                                    <constraint firstItem="BaB-hU-Jdq" firstAttribute="leading" secondItem="urW-fs-DPz" secondAttribute="leading" constant="209" id="rR9-7J-WIJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uHo-v2-MWF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kbl-Oj-gup" firstAttribute="leading" secondItem="urW-fs-DPz" secondAttribute="leading" id="3WC-7j-Xyj"/>
                             <constraint firstAttribute="trailing" secondItem="7d8-Wq-fsy" secondAttribute="trailing" id="4MZ-I0-Agj"/>
+                            <constraint firstItem="urW-fs-DPz" firstAttribute="trailing" secondItem="uHo-v2-MWF" secondAttribute="trailing" id="4sM-4u-hCL"/>
+                            <constraint firstItem="kbl-Oj-gup" firstAttribute="top" secondItem="urW-fs-DPz" secondAttribute="bottom" id="9uX-VF-xCX"/>
+                            <constraint firstItem="urW-fs-DPz" firstAttribute="top" secondItem="7d8-Wq-fsy" secondAttribute="bottom" id="Fix-Sj-7Dk"/>
                             <constraint firstItem="7d8-Wq-fsy" firstAttribute="top" secondItem="gwd-fO-y79" secondAttribute="top" id="IKZ-UQ-SfR"/>
+                            <constraint firstItem="kbl-Oj-gup" firstAttribute="trailing" secondItem="urW-fs-DPz" secondAttribute="trailing" id="OMe-G9-kr7"/>
                             <constraint firstItem="7d8-Wq-fsy" firstAttribute="leading" secondItem="gwd-fO-y79" secondAttribute="leading" id="fxA-VO-ZFG"/>
+                            <constraint firstItem="kbl-Oj-gup" firstAttribute="bottom" secondItem="uHo-v2-MWF" secondAttribute="bottom" id="kqW-n7-iF1"/>
+                            <constraint firstItem="urW-fs-DPz" firstAttribute="leading" secondItem="uHo-v2-MWF" secondAttribute="leading" id="wFn-Xf-W9d"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tabBar" destination="kbl-Oj-gup" id="sv7-RU-JAF"/>
+                        <outlet property="DataView" destination="BaB-hU-Jdq" id="sMj-Fr-vCT"/>
+                        <outlet property="SceneView" destination="urW-fs-DPz" id="xMC-bv-d2Y"/>
+                        <outlet property="TabBar" destination="kbl-Oj-gup" id="mJK-Px-N0o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bCK-ks-e78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="3"/>
+            <point key="canvasLocation" x="498.55072463768118" y="2.6785714285714284"/>
         </scene>
         <!--Proteins Tab-->
         <scene sceneID="Qe2-Xy-Ruv">

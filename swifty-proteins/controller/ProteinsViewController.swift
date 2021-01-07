@@ -8,17 +8,22 @@
 import UIKit
 import SceneKit
 
-class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRendererDelegate {
+class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
 
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
     var dataset: [String.SubSequence]?
+    var periodic: Periodic?
     var atoms = ProteinsModel()
     var Camera = CameraModel()
-    var Animationstate = true
+    var Menu = MenuController()
+    var DataShow = MendeleievController()
     
     @IBOutlet weak var TabBar: UITabBar!
+    @IBOutlet weak var SceneView: UIView!
+    @IBOutlet weak var DataView: UIView!
+    
     
     var dataRepresent:[String.SubSequence]? {
         didSet {
@@ -26,10 +31,14 @@ class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRender
         }
     }
     
+    var periodicValue:Periodic? {
+        didSet {
+            periodic = periodicValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        TabBar.delegate = self
         
         initView()
         initScene()
@@ -37,11 +46,18 @@ class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRender
         createAtoms()
         
         scnView.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action:
+                   #selector(handleTap(_:)))
+        scnView.addGestureRecognizer(tapGesture)
+        
+        Menu.setData(cam: Camera, v: SceneView as! SCNView, scnV: scnView, scnS: scnScene)
+        TabBar.delegate = Menu
+        DataView.accessibilityElementsHidden = true
     }
     
     func initView() {
         
-        scnView = (self.view as! SCNView)
+        scnView = (SceneView as! SCNView)
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
         scnView.backgroundColor = UIColor(red: 191/255, green: 187/255, blue: 188/255, alpha: 1)
@@ -73,7 +89,7 @@ class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRender
             let infos = String(dataset![i]).condensed.split(separator: " ")
             if infos[0] == "ATOM" {
                 
-                createSphere(x: String(infos[6]), y: String(infos[7]), z: String(infos[8]), color: atoms.GetColor(atom: String(infos[11])))
+                createSphere(x: String(infos[6]), y: String(infos[7]), z: String(infos[8]), color: atoms.GetColor(atom: String(infos[11])), name: String(infos[11]))
             } else if infos[0] == "CONECT" {
                 
                 getConnections(data: infos, content: dataset!)
@@ -118,14 +134,32 @@ class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRender
         
     }
     
-    func createSphere(x: String, y: String, z: String, color: UIColor) {
+    func createSphere(x: String, y: String, z: String, color: UIColor, name: String) {
         
         let sphere = SCNSphere(radius: CGFloat(atoms.GetRadius()))
         sphere.firstMaterial?.diffuse.contents = color
         let sphereNode = SCNNode(geometry: sphere)
         sphereNode.position = SCNVector3(x: Float(x)!, y: Float(y)!, z: Float(z)!)
+        sphereNode.name = name
             
         scnScene.rootNode.addChildNode(sphereNode)
+    }
+    
+    @objc func handleTap(_ gestureRecognize: UIGestureRecognizer) {
+        
+        let sceneView = SceneView as! SCNView
+        let p = gestureRecognize.location(in: scnView)
+        let hitResults = sceneView.hitTest(p, options: [:])
+
+        if hitResults.count > 0 {
+            
+            let result: SCNHitTestResult = hitResults[0]
+            if (((result.node.geometry as? SCNSphere)?.radius) != nil) {
+                
+                DataView.accessibilityElementsHidden = false
+                DataShow.Setup(ModelView: DataView as! SCNView, atom: result.node.name!, data: periodic)
+            }
+        }
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -135,7 +169,7 @@ class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRender
     
     @IBAction func Share(_ sender: Any) {
     
-        let scnView = self.view as! SCNView
+        let scnView = SceneView as! SCNView
             
         DispatchQueue.main.async {
 
@@ -145,58 +179,5 @@ class ProteinsViewController: UIViewController, UITabBarDelegate, SCNSceneRender
                     activityViewController.popoverPresentationController?.sourceView = self.view
             self.present(activityViewController, animated: true, completion: nil)
         }
-    }
-    
-    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        
-        switch tabBar.items!.firstIndex(of: item) {
-        case 0:
-            Zoom(w: 0, i: item, l: "+", c: tabBar.items![1])
-            return
-        case 1:
-            Zoom(w: 1, i: item, l: "-", c: tabBar.items![0])
-            return
-        case 2:
-            Zoom(w: 2, i: tabBar.items![0], l: "-", c: tabBar.items![1])
-            return
-        default:
-            AutoRotate()
-        }
-    }
-    
-    func Zoom(w: Int, i: UITabBarItem, l: String, c: UITabBarItem) {
-        
-        Animationstate = false
-        AutoRotate()
-        let view = self.view as! SCNView
-        let node = view.scene!.rootNode.childNode(withName: "Camera", recursively: false)
-        var newNode:SCNNode
-        
-        switch w {
-        case 0:
-            newNode = Camera.ZoomMore(cameraNode: node!, i: i, l: l, c: c)
-        case 1:
-            newNode = Camera.ZoomLess(cameraNode: node!, i: i, l: l, c: c)
-        default:
-            newNode = Camera.ResetZoom(cameraNode: node!, i: i, l: l, c: c)
-        }
-        scnView.pointOfView = newNode
-    }
-    
-    func AutoRotate() {
-        
-        if !Animationstate {
-        
-            scnScene.rootNode.removeAllAnimations()
-        } else {
-            
-            let spin = CABasicAnimation(keyPath: "rotation")
-            spin.fromValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: 0))
-            spin.toValue = NSValue(scnVector4: SCNVector4(x: 0, y: 1, z: 0, w: Float(CGFloat(2 * Double.pi))))
-            spin.duration = 20
-            spin.repeatCount = .infinity
-            scnScene.rootNode.addAnimation(spin, forKey: "spin around")
-        }
-        Animationstate = !Animationstate
     }
 }

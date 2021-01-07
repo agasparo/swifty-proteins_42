@@ -11,6 +11,10 @@
 		8E0C554525A3395C002EDAB8 /* Proteins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C554425A3395C002EDAB8 /* Proteins.swift */; };
 		8E0C554825A3514B002EDAB8 /* ProteinsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C554725A3514B002EDAB8 /* ProteinsCustomCell.swift */; };
 		8E0C555725A35A0C002EDAB8 /* ProteinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0C555625A35A0C002EDAB8 /* ProteinsViewController.swift */; };
+		8E87D13925A72EFC007B6196 /* ToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87D13825A72EFC007B6196 /* ToolbarController.swift */; };
+		8E87D13D25A73215007B6196 /* MendeleievController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87D13C25A73215007B6196 /* MendeleievController.swift */; };
+		8E87D14025A73220007B6196 /* MendeleievModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87D13F25A73220007B6196 /* MendeleievModel.swift */; };
+		8E87D14625A73803007B6196 /* PeriodicTable.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E87D14525A73803007B6196 /* PeriodicTable.json */; };
 		8E8F7CB925A5BC2C004C7755 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F7CB825A5BC2C004C7755 /* Vector.swift */; };
 		8E8F7CBD25A5BC3E004C7755 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F7CBC25A5BC3E004C7755 /* Strings.swift */; };
 		8E8F7CC025A5E5F8004C7755 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F7CBF25A5E5F8004C7755 /* CameraModel.swift */; };
@@ -22,6 +26,7 @@
 		8EDA116925A3113F00E6DC08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDA116725A3113F00E6DC08 /* Main.storyboard */; };
 		8EDA116B25A3114200E6DC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EDA116A25A3114200E6DC08 /* Assets.xcassets */; };
 		8EDA116E25A3114200E6DC08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EDA116C25A3114200E6DC08 /* LaunchScreen.storyboard */; };
+		8EE3D88D25A738DE00F272C7 /* Periodic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3D88C25A738DE00F272C7 /* Periodic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,10 @@
 		8E0C554425A3395C002EDAB8 /* Proteins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteins.swift; sourceTree = "<group>"; };
 		8E0C554725A3514B002EDAB8 /* ProteinsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsCustomCell.swift; sourceTree = "<group>"; };
 		8E0C555625A35A0C002EDAB8 /* ProteinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProteinsViewController.swift; sourceTree = "<group>"; };
+		8E87D13825A72EFC007B6196 /* ToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarController.swift; sourceTree = "<group>"; };
+		8E87D13C25A73215007B6196 /* MendeleievController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendeleievController.swift; sourceTree = "<group>"; };
+		8E87D13F25A73220007B6196 /* MendeleievModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendeleievModel.swift; sourceTree = "<group>"; };
+		8E87D14525A73803007B6196 /* PeriodicTable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PeriodicTable.json; sourceTree = "<group>"; };
 		8E8F7CB825A5BC2C004C7755 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		8E8F7CBC25A5BC3E004C7755 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8E8F7CBF25A5E5F8004C7755 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
@@ -42,6 +51,7 @@
 		8EDA116A25A3114200E6DC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EDA116D25A3114200E6DC08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EDA116F25A3114200E6DC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE3D88C25A738DE00F272C7 /* Periodic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Periodic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +74,22 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		8E8F7CB625A5B360004C7755 /* extensions */ = {
+		8E87D14325A737C6007B6196 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8E87D14525A73803007B6196 /* PeriodicTable.json */,
+				8EE3D88C25A738DE00F272C7 /* Periodic.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8E8F7CB625A5B360004C7755 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8E8F7CB825A5BC2C004C7755 /* Vector.swift */,
 				8E8F7CBC25A5BC3E004C7755 /* Strings.swift */,
 			);
-			path = extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8EAE2C8925A45C8D005E7459 /* Model */ = {
@@ -78,6 +97,7 @@
 			children = (
 				8EAE2C8B25A4606C005E7459 /* ProteinsModel.swift */,
 				8E8F7CBF25A5E5F8004C7755 /* CameraModel.swift */,
+				8E87D13F25A73220007B6196 /* MendeleievModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,7 +121,8 @@
 		8EDA116025A3113F00E6DC08 /* swifty-proteins */ = {
 			isa = PBXGroup;
 			children = (
-				8E8F7CB625A5B360004C7755 /* extensions */,
+				8E87D14325A737C6007B6196 /* Data */,
+				8E8F7CB625A5B360004C7755 /* Extensions */,
 				8EAE2C8925A45C8D005E7459 /* Model */,
 				8E0C553C25A32683002EDAB8 /* Tabs */,
 				8EDA117625A312B400E6DC08 /* controller */,
@@ -122,6 +143,8 @@
 				8E0C553925A32618002EDAB8 /* ChoiceController.swift */,
 				8E0C555625A35A0C002EDAB8 /* ProteinsViewController.swift */,
 				8EAE2C8625A45BD2005E7459 /* DataProteinsController.swift */,
+				8E87D13825A72EFC007B6196 /* ToolbarController.swift */,
+				8E87D13C25A73215007B6196 /* MendeleievController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -184,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EDA116E25A3114200E6DC08 /* LaunchScreen.storyboard in Resources */,
+				8E87D14625A73803007B6196 /* PeriodicTable.json in Resources */,
 				8EDA116B25A3114200E6DC08 /* Assets.xcassets in Resources */,
 				8EDA116925A3113F00E6DC08 /* Main.storyboard in Resources */,
 			);
@@ -202,10 +226,14 @@
 				8EAE2C8725A45BD2005E7459 /* DataProteinsController.swift in Sources */,
 				8E8F7CB925A5BC2C004C7755 /* Vector.swift in Sources */,
 				8EAE2C8C25A4606C005E7459 /* ProteinsModel.swift in Sources */,
+				8E87D13925A72EFC007B6196 /* ToolbarController.swift in Sources */,
 				8EDA116625A3113F00E6DC08 /* ViewController.swift in Sources */,
+				8EE3D88D25A738DE00F272C7 /* Periodic.swift in Sources */,
 				8E0C554825A3514B002EDAB8 /* ProteinsCustomCell.swift in Sources */,
+				8E87D14025A73220007B6196 /* MendeleievModel.swift in Sources */,
 				8EDA116225A3113F00E6DC08 /* AppDelegate.swift in Sources */,
 				8E0C554525A3395C002EDAB8 /* Proteins.swift in Sources */,
+				8E87D13D25A73215007B6196 /* MendeleievController.swift in Sources */,
 				8EDA116425A3113F00E6DC08 /* SceneDelegate.swift in Sources */,
 				8E0C555725A35A0C002EDAB8 /* ProteinsViewController.swift in Sources */,
 			);

@@ -45,7 +45,7 @@ class CameraModel {
     
     func SetText(i: UITabBarItem, l: String, c: UITabBarItem) {
         
-        i.title = "zoom " + l + " (" + String(FOV / 150 * 100) + "%)"
+        i.title = "zoom " + l + " (" + String(Int(FOV / 150 * 100)) + "%)"
         var sign = l
         if sign == "-" {
             sign = "+"

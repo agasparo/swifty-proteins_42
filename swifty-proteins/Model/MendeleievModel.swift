@@ -1,0 +1,14 @@
+//
+//  mendeleievModel.swift
+//  swifty-proteins
+//
+//  Created by arthur on 07/01/2021.
+//
+
+import Foundation
+
+
+class MendeleievModel {
+    
+    
+}

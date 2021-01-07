@@ -106,17 +106,20 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
             
             name = String(self.data![indexPath.row])
         }
+        
+        let tableElems = Data.getPeriodicTable()
+        
         //ici speening wheel
         self.histoProt.append(name)
         let response = Data.getPdbFile(name: name)
-        //print (response)
-        if !response.isEmpty {
+        if !response.isEmpty && tableElems != nil {
          
             let main = UIStoryboard(name: "Main", bundle: nil)
             if let next = main.instantiateViewController(withIdentifier: "Model") as? ProteinsViewController {
                 
                 print ("in ok")
                 next.dataRepresent = response
+                next.periodicValue = tableElems
                 self.present(next, animated: true, completion: { () in
                 
                     print ("stop sinnig")
