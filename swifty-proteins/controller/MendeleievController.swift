@@ -14,10 +14,10 @@ class MendeleievController: NSObject, SCNSceneRendererDelegate {
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
     var SceneView: SCNView?
-    
+    var DataPeriodic = MendeleievModel()
     var periodic: Periodic?
     
-    func Setup(ModelView: SCNView, atom: String, data: Periodic?) {
+    func Setup(ModelView: SCNView, atom: String, data: Periodic?, name: UILabel, discover: UILabel, details: UILabel) {
         
         SceneView = ModelView
         periodic = data
@@ -26,7 +26,26 @@ class MendeleievController: NSObject, SCNSceneRendererDelegate {
         initScene()
         initCamera()
         
+        DataPeriodic.setup(data: periodic)
+        let infos = DataPeriodic.getAtomsBySymbol(name: atom)
+        if infos != nil {
+            
+            setupInformations(data: infos, name: name, discover: discover, details: details)
+        } else {
+            // affihcer quon a pas assez dinfos
+        }
+        
         createSphere(x: "0", y: "0", z: "0", color: ProteinsModel().GetColor(atom: atom))
+    }
+    
+    func setupInformations(data: AtomDetail?, name: UILabel, discover: UILabel, details: UILabel) {
+        
+        name.text = data?.name
+        discover.text = data?.discovered_by
+        if data?.density == nil {
+            data?.density = 0.0
+        }
+        details.text = String(data?.atomic_mass) + "\n" + String(data?.density) + "\n" + String(data?.molar_heat)
     }
     
     func initView() {

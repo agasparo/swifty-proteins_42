@@ -84,7 +84,40 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-hU-Jdq" customClass="SCNView">
                                         <rect key="frame" x="209" y="0.0" width="205" height="241"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IF-kb-pjm">
+                                                <rect key="frame" x="8" y="8" width="189" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfW-NA-Bxr">
+                                                <rect key="frame" x="8" y="220" width="189" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjl-YQ-39b">
+                                                <rect key="frame" x="154" y="54" width="51" height="122"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="122" id="Uvg-D2-dIn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OfW-NA-Bxr" firstAttribute="leading" secondItem="BaB-hU-Jdq" secondAttribute="leading" constant="8" id="3C0-7f-GHn"/>
+                                            <constraint firstItem="7IF-kb-pjm" firstAttribute="leading" secondItem="BaB-hU-Jdq" secondAttribute="leading" constant="8" id="7XY-Qf-Nn5"/>
+                                            <constraint firstAttribute="trailing" secondItem="gjl-YQ-39b" secondAttribute="trailing" id="KIf-UU-Ntq"/>
+                                            <constraint firstItem="7IF-kb-pjm" firstAttribute="top" secondItem="BaB-hU-Jdq" secondAttribute="top" constant="8" id="Qzt-nT-NvE"/>
+                                            <constraint firstAttribute="trailing" secondItem="OfW-NA-Bxr" secondAttribute="trailing" constant="8" id="euc-z3-rW1"/>
+                                            <constraint firstAttribute="bottom" secondItem="OfW-NA-Bxr" secondAttribute="bottom" id="foJ-Qq-JoK"/>
+                                            <constraint firstItem="gjl-YQ-39b" firstAttribute="top" secondItem="7IF-kb-pjm" secondAttribute="bottom" constant="25" id="prj-Vp-JFz"/>
+                                            <constraint firstAttribute="trailing" secondItem="7IF-kb-pjm" secondAttribute="trailing" constant="8" id="vdF-9d-i4m"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,6 +145,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AtomDetails" destination="gjl-YQ-39b" id="G8X-Tb-T1a"/>
+                        <outlet property="AtomDiscover" destination="OfW-NA-Bxr" id="iDY-pQ-7vA"/>
+                        <outlet property="AtomName" destination="7IF-kb-pjm" id="fQH-cB-4QP"/>
                         <outlet property="DataView" destination="BaB-hU-Jdq" id="sMj-Fr-vCT"/>
                         <outlet property="SceneView" destination="urW-fs-DPz" id="xMC-bv-d2Y"/>
                         <outlet property="TabBar" destination="kbl-Oj-gup" id="mJK-Px-N0o"/>

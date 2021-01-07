@@ -14,6 +14,6 @@ struct Periodic: Codable {
 
 struct AtomDetail : Codable {
     
-    let name, discovered_by: String?
+    let name, discovered_by, symbol: String?
     let molar_heat, density, atomic_mass: Float?
 }

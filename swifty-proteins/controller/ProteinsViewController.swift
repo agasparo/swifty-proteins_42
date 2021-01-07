@@ -24,6 +24,9 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
     @IBOutlet weak var SceneView: UIView!
     @IBOutlet weak var DataView: UIView!
     
+    @IBOutlet weak var AtomName: UILabel!
+    @IBOutlet weak var AtomDiscover: UILabel!
+    @IBOutlet weak var AtomDetails: UILabel!
     
     var dataRepresent:[String.SubSequence]? {
         didSet {
@@ -157,7 +160,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
             if (((result.node.geometry as? SCNSphere)?.radius) != nil) {
                 
                 DataView.accessibilityElementsHidden = false
-                DataShow.Setup(ModelView: DataView as! SCNView, atom: result.node.name!, data: periodic)
+                DataShow.Setup(ModelView: DataView as! SCNView, atom: result.node.name!, data: periodic, name: AtomName, discover: AtomDiscover, details: AtomDetails)
             }
         }
     }
