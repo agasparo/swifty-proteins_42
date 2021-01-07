@@ -58,6 +58,8 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
         DataView.isHidden = true
         
         AtomDetails.backgroundColor = UIColor(white: 1, alpha: 0)
+        SceneView.backgroundColor = .black
+        
     }
     
     func initView() {
