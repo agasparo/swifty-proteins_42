@@ -26,7 +26,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
     
     @IBOutlet weak var AtomName: UILabel!
     @IBOutlet weak var AtomDiscover: UILabel!
-    @IBOutlet weak var AtomDetails: UILabel!
+    @IBOutlet weak var AtomDetails: UITextView!
     
     var dataRepresent:[String.SubSequence]? {
         didSet {
@@ -56,6 +56,8 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
         Menu.setData(cam: Camera, v: SceneView as! SCNView, scnV: scnView, scnS: scnScene)
         TabBar.delegate = Menu
         DataView.accessibilityElementsHidden = true
+        
+        AtomDetails.backgroundColor = UIColor(white: 1, alpha: 0)
     }
     
     func initView() {

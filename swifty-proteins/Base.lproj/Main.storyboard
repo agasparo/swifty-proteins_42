@@ -97,25 +97,27 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjl-YQ-39b">
-                                                <rect key="frame" x="154" y="54" width="51" height="122"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="details" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MOE-qV-VQs">
+                                                <rect key="frame" x="0.0" y="174" width="201" height="38"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="122" id="Uvg-D2-dIn"/>
+                                                    <constraint firstAttribute="height" constant="38" id="V0U-1a-uT0"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="OfW-NA-Bxr" firstAttribute="leading" secondItem="BaB-hU-Jdq" secondAttribute="leading" constant="8" id="3C0-7f-GHn"/>
                                             <constraint firstItem="7IF-kb-pjm" firstAttribute="leading" secondItem="BaB-hU-Jdq" secondAttribute="leading" constant="8" id="7XY-Qf-Nn5"/>
-                                            <constraint firstAttribute="trailing" secondItem="gjl-YQ-39b" secondAttribute="trailing" id="KIf-UU-Ntq"/>
+                                            <constraint firstItem="MOE-qV-VQs" firstAttribute="leading" secondItem="BaB-hU-Jdq" secondAttribute="leading" id="L6C-hQ-7bd"/>
                                             <constraint firstItem="7IF-kb-pjm" firstAttribute="top" secondItem="BaB-hU-Jdq" secondAttribute="top" constant="8" id="Qzt-nT-NvE"/>
+                                            <constraint firstAttribute="trailing" secondItem="MOE-qV-VQs" secondAttribute="trailing" constant="4" id="XCt-Gh-Iim"/>
                                             <constraint firstAttribute="trailing" secondItem="OfW-NA-Bxr" secondAttribute="trailing" constant="8" id="euc-z3-rW1"/>
                                             <constraint firstAttribute="bottom" secondItem="OfW-NA-Bxr" secondAttribute="bottom" id="foJ-Qq-JoK"/>
-                                            <constraint firstItem="gjl-YQ-39b" firstAttribute="top" secondItem="7IF-kb-pjm" secondAttribute="bottom" constant="25" id="prj-Vp-JFz"/>
+                                            <constraint firstItem="OfW-NA-Bxr" firstAttribute="top" secondItem="MOE-qV-VQs" secondAttribute="bottom" constant="8" symbolic="YES" id="sOr-tw-7k5"/>
                                             <constraint firstAttribute="trailing" secondItem="7IF-kb-pjm" secondAttribute="trailing" constant="8" id="vdF-9d-i4m"/>
                                         </constraints>
                                     </view>
@@ -145,7 +147,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="AtomDetails" destination="gjl-YQ-39b" id="G8X-Tb-T1a"/>
+                        <outlet property="AtomDetails" destination="MOE-qV-VQs" id="fhP-2B-g4P"/>
                         <outlet property="AtomDiscover" destination="OfW-NA-Bxr" id="iDY-pQ-7vA"/>
                         <outlet property="AtomName" destination="7IF-kb-pjm" id="fQH-cB-4QP"/>
                         <outlet property="DataView" destination="BaB-hU-Jdq" id="sMj-Fr-vCT"/>
@@ -218,6 +220,9 @@
         <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="rotate.3d" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

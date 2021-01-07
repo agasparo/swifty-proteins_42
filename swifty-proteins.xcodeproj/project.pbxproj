@@ -14,7 +14,6 @@
 		8E87D13925A72EFC007B6196 /* ToolbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87D13825A72EFC007B6196 /* ToolbarController.swift */; };
 		8E87D13D25A73215007B6196 /* MendeleievController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87D13C25A73215007B6196 /* MendeleievController.swift */; };
 		8E87D14025A73220007B6196 /* MendeleievModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E87D13F25A73220007B6196 /* MendeleievModel.swift */; };
-		8E87D14625A73803007B6196 /* PeriodicTable.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E87D14525A73803007B6196 /* PeriodicTable.json */; };
 		8E8F7CB925A5BC2C004C7755 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F7CB825A5BC2C004C7755 /* Vector.swift */; };
 		8E8F7CBD25A5BC3E004C7755 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F7CBC25A5BC3E004C7755 /* Strings.swift */; };
 		8E8F7CC025A5E5F8004C7755 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F7CBF25A5E5F8004C7755 /* CameraModel.swift */; };
@@ -37,7 +36,6 @@
 		8E87D13825A72EFC007B6196 /* ToolbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarController.swift; sourceTree = "<group>"; };
 		8E87D13C25A73215007B6196 /* MendeleievController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendeleievController.swift; sourceTree = "<group>"; };
 		8E87D13F25A73220007B6196 /* MendeleievModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MendeleievModel.swift; sourceTree = "<group>"; };
-		8E87D14525A73803007B6196 /* PeriodicTable.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PeriodicTable.json; sourceTree = "<group>"; };
 		8E8F7CB825A5BC2C004C7755 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		8E8F7CBC25A5BC3E004C7755 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		8E8F7CBF25A5E5F8004C7755 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 		8E87D14325A737C6007B6196 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				8E87D14525A73803007B6196 /* PeriodicTable.json */,
 				8EE3D88C25A738DE00F272C7 /* Periodic.swift */,
 			);
 			path = Data;
@@ -207,7 +204,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EDA116E25A3114200E6DC08 /* LaunchScreen.storyboard in Resources */,
-				8E87D14625A73803007B6196 /* PeriodicTable.json in Resources */,
 				8EDA116B25A3114200E6DC08 /* Assets.xcassets in Resources */,
 				8EDA116925A3113F00E6DC08 /* Main.storyboard in Resources */,
 			);
