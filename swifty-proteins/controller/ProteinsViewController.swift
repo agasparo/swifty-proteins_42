@@ -55,7 +55,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
         
         Menu.setData(cam: Camera, v: SceneView as! SCNView, scnV: scnView, scnS: scnScene)
         TabBar.delegate = Menu
-        DataView.accessibilityElementsHidden = true
+        DataView.isHidden = true
         
         AtomDetails.backgroundColor = UIColor(white: 1, alpha: 0)
     }
@@ -161,7 +161,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
             let result: SCNHitTestResult = hitResults[0]
             if (((result.node.geometry as? SCNSphere)?.radius) != nil) {
                 
-                DataView.accessibilityElementsHidden = false
+                DataView.isHidden = false
                 DataShow.Setup(ModelView: DataView as! SCNView, atom: result.node.name!, data: periodic, name: AtomName, discover: AtomDiscover, details: AtomDetails)
             }
         }
