@@ -12,7 +12,7 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
     var data: [String.SubSequence]?
     var filteredTableData = [String.SubSequence]()
     var resultSearchController = UISearchController()
-    var histoProt = [""] // le mettre en persistant
+    static var histoProt = [String]()
     var Data = DataProteins()
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
         if (resultSearchController.isActive) {
 
             cell.Name.text = String(filteredTableData[indexPath.row])
-            if histoProt.contains(cell.Name.text!) {
+            if ProteinsTab.histoProt.contains(cell.Name.text!) {
                 cell.State.text = "already seen"
                 cell.State.textColor = UIColor(red: 0, green: 0.2863, blue: 0.149, alpha: 1.0)
             } else {
@@ -84,7 +84,7 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
         } else {
 
             cell.Name.text = String(self.data![indexPath.row])
-            if histoProt.contains(cell.Name.text!) {
+            if ProteinsTab.histoProt.contains(cell.Name.text!) {
                 cell.State.text = "already seen"
                 cell.State.textColor = UIColor(red: 0, green: 0.2863, blue: 0.149, alpha: 1.0)
             } else {
@@ -107,28 +107,34 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
             name = String(self.data![indexPath.row])
         }
         
-        let tableElems = Data.getPeriodicTable()
-        
-        //ici speening wheel
-        self.histoProt.append(name)
-        let response = Data.getPdbFile(name: name)
-        if !response.isEmpty && tableElems != nil {
-         
-            let main = UIStoryboard(name: "Main", bundle: nil)
-            if let next = main.instantiateViewController(withIdentifier: "Model") as? ProteinsViewController {
+        self.resultSearchController.searchBar.text = ""
+        resultSearchController.dismiss(animated: false, completion: { () in
                 
-                next.dataRepresent = response
-                next.periodicValue = tableElems
-                next.ProtIdValue = name
-                self.present(next, animated: true, completion: { () in
-                
-                    print ("stop sinnig")
-                })
-            }
-        } else {
+            let alert = self.ShowSpinner()
             
-            self.present(self.UIErrors(titlePopUp: "Error", msg: "No data found for " + name, response: "ok"), animated: true)
-        }
+            let tableElems = self.Data.getPeriodicTable()
+            ProteinsTab.histoProt.append(name)
+            let response = self.Data.getPdbFile(name: name)
+            if !response.isEmpty && tableElems != nil {
+             
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                if let next = main.instantiateViewController(withIdentifier: "Model") as? ProteinsViewController {
+                    
+                    next.dataRepresent = response
+                    next.periodicValue = tableElems
+                    next.ProtIdValue = name
+                    
+                    alert.dismiss(animated: false, completion: {() in
+                        
+                        tableView.reloadData()
+                        self.present(next, animated: true, completion: nil)
+                    })
+                }
+            } else {
+                
+                self.present(self.UIErrors(titlePopUp: "Error", msg: "No data found for " + name, response: "ok"), animated: true)
+            }
+        })
     }
     
     func UIErrors(titlePopUp: String, msg: String, response: String) -> UIAlertController {
@@ -138,4 +144,16 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
         return ac
     }
     
+    func ShowSpinner() -> UIAlertController {
+        
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        return (alert)
+    }
 }
