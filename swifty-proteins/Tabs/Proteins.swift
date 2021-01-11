@@ -117,9 +117,9 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
             let main = UIStoryboard(name: "Main", bundle: nil)
             if let next = main.instantiateViewController(withIdentifier: "Model") as? ProteinsViewController {
                 
-                print ("in ok")
                 next.dataRepresent = response
                 next.periodicValue = tableElems
+                next.ProtIdValue = name
                 self.present(next, animated: true, completion: { () in
                 
                     print ("stop sinnig")

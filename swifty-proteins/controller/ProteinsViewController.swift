@@ -19,6 +19,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
     var Camera = CameraModel()
     var Menu = MenuController()
     var DataShow = MendeleievController()
+    var ProtId:String?
     
     @IBOutlet weak var TabBar: UITabBar!
     @IBOutlet weak var SceneView: UIView!
@@ -27,6 +28,8 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
     @IBOutlet weak var AtomName: UILabel!
     @IBOutlet weak var AtomDiscover: UILabel!
     @IBOutlet weak var AtomDetails: UITextView!
+    
+    @IBOutlet weak var ProtName: UILabel!
     
     var dataRepresent:[String.SubSequence]? {
         didSet {
@@ -40,8 +43,16 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
         }
     }
     
+    var ProtIdValue:String? {
+        didSet {
+            ProtId = ProtIdValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ProtName.text = ProtId
         
         initView()
         initScene()
@@ -96,7 +107,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
             let infos = String(dataset![i]).condensed.split(separator: " ")
             if infos[0] == "ATOM" {
                 
-                createSphere(x: String(infos[6]), y: String(infos[7]), z: String(infos[8]), color: atoms.GetColor(atom: String(infos[11])), name: String(infos[11]))
+                createSphere(x: String(infos[6]), y: String(infos[7]), z: String(infos[8]), color: atoms.GetColor(atom: String(infos[11]), periodic: periodic), name: String(infos[11]))
             } else if infos[0] == "CONECT" {
                 
                 getConnections(data: infos, content: dataset!)
@@ -119,7 +130,7 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
             let from = SCNVector3(x: Float(searchfrom[6])!, y: Float(searchfrom[7])!, z: Float(searchfrom[8])!)
             let to = SCNVector3(x: Float(searchto[6])!, y: Float(searchto[7])!, z: Float(searchto[8])!)
             
-            createCylindre(to: to, from: from, color: atoms.GetColor(atom: String(searchto[11])))
+            createCylindre(to: to, from: from, color: atoms.GetColor(atom: String(searchto[11]), periodic: periodic))
             i += 1
         }
     }

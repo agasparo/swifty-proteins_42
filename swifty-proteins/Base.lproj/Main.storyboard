@@ -132,6 +132,12 @@
                                     <constraint firstItem="BaB-hU-Jdq" firstAttribute="leading" secondItem="urW-fs-DPz" secondAttribute="leading" constant="209" id="rR9-7J-WIJ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vno-DB-P3z">
+                                <rect key="frame" x="186" y="12" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uHo-v2-MWF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,13 +145,16 @@
                             <constraint firstItem="kbl-Oj-gup" firstAttribute="leading" secondItem="urW-fs-DPz" secondAttribute="leading" id="3WC-7j-Xyj"/>
                             <constraint firstAttribute="trailing" secondItem="7d8-Wq-fsy" secondAttribute="trailing" id="4MZ-I0-Agj"/>
                             <constraint firstItem="urW-fs-DPz" firstAttribute="trailing" secondItem="uHo-v2-MWF" secondAttribute="trailing" id="4sM-4u-hCL"/>
+                            <constraint firstItem="Vno-DB-P3z" firstAttribute="top" secondItem="gwd-fO-y79" secondAttribute="top" constant="12" id="8C6-NG-x70"/>
                             <constraint firstItem="kbl-Oj-gup" firstAttribute="top" secondItem="urW-fs-DPz" secondAttribute="bottom" id="9uX-VF-xCX"/>
                             <constraint firstItem="urW-fs-DPz" firstAttribute="top" secondItem="7d8-Wq-fsy" secondAttribute="bottom" id="Fix-Sj-7Dk"/>
                             <constraint firstItem="7d8-Wq-fsy" firstAttribute="top" secondItem="gwd-fO-y79" secondAttribute="top" id="IKZ-UQ-SfR"/>
                             <constraint firstItem="kbl-Oj-gup" firstAttribute="trailing" secondItem="urW-fs-DPz" secondAttribute="trailing" id="OMe-G9-kr7"/>
+                            <constraint firstItem="Vno-DB-P3z" firstAttribute="centerX" secondItem="7d8-Wq-fsy" secondAttribute="centerX" id="dRD-rF-nt1"/>
                             <constraint firstItem="7d8-Wq-fsy" firstAttribute="leading" secondItem="gwd-fO-y79" secondAttribute="leading" id="fxA-VO-ZFG"/>
                             <constraint firstItem="kbl-Oj-gup" firstAttribute="bottom" secondItem="uHo-v2-MWF" secondAttribute="bottom" id="kqW-n7-iF1"/>
                             <constraint firstItem="urW-fs-DPz" firstAttribute="leading" secondItem="uHo-v2-MWF" secondAttribute="leading" id="wFn-Xf-W9d"/>
+                            <constraint firstItem="urW-fs-DPz" firstAttribute="top" secondItem="Vno-DB-P3z" secondAttribute="bottom" constant="11" id="z7c-1H-VKw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -153,6 +162,7 @@
                         <outlet property="AtomDiscover" destination="OfW-NA-Bxr" id="iDY-pQ-7vA"/>
                         <outlet property="AtomName" destination="7IF-kb-pjm" id="fQH-cB-4QP"/>
                         <outlet property="DataView" destination="BaB-hU-Jdq" id="sMj-Fr-vCT"/>
+                        <outlet property="ProtName" destination="Vno-DB-P3z" id="Ild-IG-bYe"/>
                         <outlet property="SceneView" destination="urW-fs-DPz" id="xMC-bv-d2Y"/>
                         <outlet property="TabBar" destination="kbl-Oj-gup" id="mJK-Px-N0o"/>
                     </connections>

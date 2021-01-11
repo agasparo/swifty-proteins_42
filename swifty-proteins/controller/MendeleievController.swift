@@ -33,7 +33,7 @@ class MendeleievController: NSObject, SCNSceneRendererDelegate {
             setupInformations(data: infos, name: name, discover: discover, details: details)
         }
         
-        createSphere(x: "0", y: "0", z: "0", color: ProteinsModel().GetColor(atom: atom))
+        createSphere(x: "0", y: "0", z: "0", color: ProteinsModel().GetColor(atom: atom, periodic: periodic))
     }
     
     func setupInformations(data: AtomDetail?, name: UILabel, discover: UILabel, details: UITextView) {
@@ -63,7 +63,7 @@ class MendeleievController: NSObject, SCNSceneRendererDelegate {
         scnView = SceneView! as SCNView
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
-        scnView.backgroundColor = UIColor(red: 209/255, green: 204/255, blue: 205/255, alpha: 0.8)
+        scnView.backgroundColor = UIColor(red: 209/255, green: 204/255, blue: 205/255, alpha: 0.5)
     }
     
     func initScene() {
