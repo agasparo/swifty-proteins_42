@@ -16,20 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faf-dQ-hHz">
-                                <rect key="frame" x="152" y="500" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="25p-jD-tRh">
+                                <rect key="frame" x="115" y="433" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="TouchID"/>
                                 <connections>
-                                    <action selector="TouchIdAuthenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Gt-Qd-puX"/>
+                                    <action selector="TouchIdAuthenticate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bnn-c3-Zg4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLO-Ye-4Yc">
-                                <rect key="frame" x="225" y="677" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-Ne-ubU">
+                                <rect key="frame" x="187" y="819" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="next"/>
                                 <connections>
-                                    <action selector="gonext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZkG-rH-Ymi"/>
+                                    <action selector="gonext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8cN-o9-dih"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268" y="-188"/>
+            <point key="canvasLocation" x="-268.1159420289855" y="-188.16964285714286"/>
         </scene>
         <!--Proteins View Controller-->
         <scene sceneID="01D-5S-tj4">

@@ -52,6 +52,9 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        
         ProtName.text = ProtId
         
         initView()
@@ -197,5 +200,12 @@ class ProteinsViewController: UIViewController, SCNSceneRendererDelegate {
                     activityViewController.popoverPresentationController?.sourceView = self.view
             self.present(activityViewController, animated: true, completion: nil)
         }
+    }
+    
+    @objc func appMovedToBackground() {
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let next = main.instantiateViewController(withIdentifier: "Login")
+        self.present(next, animated: true, completion: nil)
     }
 }

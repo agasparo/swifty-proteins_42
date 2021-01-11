@@ -13,6 +13,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
     }
     
     @IBAction func gonext(_ sender: Any) {
@@ -37,7 +38,9 @@ class LoginController: UIViewController {
                     
                     if success {
                         
-                        print("success")
+                        let main = UIStoryboard(name: "Main", bundle: nil)
+                        let next = main.instantiateViewController(withIdentifier: "Choose")
+                        self.present(next, animated: true, completion: nil)
                     } else {
                         
                         self.present(self.UIErrors(titlePopUp: "Error", msg: "Authentication failed", response: "ok"), animated: true)

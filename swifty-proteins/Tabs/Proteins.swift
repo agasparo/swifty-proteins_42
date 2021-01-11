@@ -36,6 +36,9 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
         })()
             
         tableView.reloadData()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -155,5 +158,24 @@ class ProteinsTab : UITableViewController, UISearchResultsUpdating {
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
         return (alert)
+    }
+    
+    @objc func appMovedToBackground() {
+        
+        if (resultSearchController.isActive) {
+            
+            resultSearchController.dismiss(animated: false, completion: { () in
+                self.gotToMainMenu()
+            })
+        } else {
+            self.gotToMainMenu()
+        }
+    }
+    
+    func gotToMainMenu() {
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let next = main.instantiateViewController(withIdentifier: "Login")
+        self.present(next, animated: true, completion: nil)
     }
 }
