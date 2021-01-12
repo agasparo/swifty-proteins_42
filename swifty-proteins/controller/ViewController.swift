@@ -10,17 +10,20 @@ import LocalAuthentication
 
 class LoginController: UIViewController {
 
+    @IBOutlet weak var TouchIDBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
-    }
-    
-    @IBAction func gonext(_ sender: Any) {
         
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let next = main.instantiateViewController(withIdentifier: "Choose")
-        self.present(next, animated: true, completion: nil)
+        let context = LAContext()
+        var error : NSError?
+        
+        if !context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            
+            TouchIDBtn.isHidden = true
+        }
     }
     
     @IBAction func TouchIdAuthenticate(_ sender: Any) {
