@@ -2,7 +2,7 @@ Projet :
 
 loadPage :
 
-<img src="img/1.png" height="300">
+<img src="img/1.png" height="500">
 
 HomePage :
 
