@@ -26,7 +26,9 @@ ProteinPage (2):
 
 ProteinPage (3):
 
-<img src="img/7.png" height="500">
+<div align="center">
+	<img src="img/7.png" height="500">
+</div>
 
 bonus :
 
