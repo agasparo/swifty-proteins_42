@@ -1,5 +1,6 @@
 Projet :
 
+<div align="center">
 loadPage :
 
 <img src="img/1.png" height="500">
@@ -26,8 +27,7 @@ ProteinPage (2):
 
 ProteinPage (3):
 
-<div align="center">
-	<img src="img/7.png" height="500">
+<img src="img/7.png" height="500">
 </div>
 
 bonus :
