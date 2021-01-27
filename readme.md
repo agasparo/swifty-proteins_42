@@ -1,6 +1,7 @@
 Projet :
 
 <div align="center">
+	
 loadPage :
 
 <img src="img/1.png" height="500">
