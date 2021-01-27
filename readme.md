@@ -2,23 +2,23 @@ Projet :
 
 loadPage :
 
-![Alt text](img/1.png=100x100)
+![Alt text](img/1.png =100x100)
 
 HomePage :
 
-![Alt text](img/2.png=100x100)
+![Alt text](img/2.png =100x100)
 
 SearchPage (1):
 
-![Alt text](img/3.png=100x100)
+![Alt text](img/3.png =100x100)
 
 SearchPage (2):
 
-![Alt text](img/4.png=100x100)
+![Alt text](img/4.png =100x100)
 
 ProteinPage (1):
 
-![Alt text](img/5.png=100x100)
+![Alt text](img/5.png =100x100)
 
 ProteinPage (2):
 
