@@ -2,31 +2,31 @@ Projet :
 
 loadPage :
 
-![Alt text](img/1.png =100x100)
+<img src="img/1.png" height="100">
 
 HomePage :
 
-![Alt text](img/2.png =100x100)
+<img src="img/2.png" height="100">
 
 SearchPage (1):
 
-![Alt text](img/3.png =100x100)
+<img src="img/3.png" height="100">
 
 SearchPage (2):
 
-![Alt text](img/4.png =100x100)
+<img src="img/4.png" height="100">
 
 ProteinPage (1):
 
-![Alt text](img/5.png =100x100)
+<img src="img/5.png" height="100">
 
 ProteinPage (2):
 
-![Alt text](img/6.png=100x100)
+<img src="img/6.png" height="100">
 
 ProteinPage (3):
 
-![Alt text](img/7.png=100x100)
+<img src="img/7.png" height="100">
 
 bonus :
 
