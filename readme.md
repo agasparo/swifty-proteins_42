@@ -22,11 +22,11 @@ ProteinPage (1):
 
 ProteinPage (2):
 
-![Alt text](img/6.png?raw=true "Title")
+![Alt text](img/6.png | width=100)
 
 ProteinPage (3):
 
-![Alt text](img/7.png?raw=true "Title")
+![Alt text](img/7.png | width=100)
 
 bonus :
 
